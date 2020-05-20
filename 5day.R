@@ -109,7 +109,7 @@ idx
 #
 # 단일 변수 범주형 자료 : 특성이 하나이면서 자료의 특성이 범주형인 자료
 #   범주형 자료에 할 수 있는 기본 작업 : 자료에 포함된 관측값들의
-#             (범주형일때) 도수분포표 <- 종류별로 개수를 세는 것,
+#             ★(범주형일때) 도수분포표★ <- 종류별로 개수를 세는 것,
 #                                        종류별로 비율을 구하는 것,
 #                                   시각화는 막대/원 그래프를 사용
 #
@@ -203,7 +203,7 @@ weight.heavy <- c(weight,120)
 weight.heavy
 
 #평균
-mean(weight)
+mean(weight)              #단일 변수의 연속형 
 mean(weight.heavy)
 
 #중앙값
@@ -216,7 +216,7 @@ mean(weight.heavy,trim=0.2)
 
 #사분위수
 quantile(weight.heavy)
-quantile(weight.heavy, (0:10)/10)
+quantile(weight.heavy, (0:10)/10) #★
     # (0:10)/10 : 구간을 몇개로 나눌것인지를 지정
     # 0.1~1.0 사이 백분율로 10%~100%
 summary(weight.heavy)
@@ -258,7 +258,7 @@ hist(dist, main = "Histogram for 제동거리",
 # 상자그래프는 하나의 그래프로 데이터의 분포
 # 형태를 포함한 다양한 정보를 전달
 # - 자료의 전반적인 분포를 이해하는데 도움
-# - 구체적인 최소/최대/중앙값을 알기는 어렵다.
+# -★구체적인 최소/최대/중앙값을 알기는 어렵다.
 boxplot(dist,main='자동차 제동거리')
 
 boxplot.stats(dist)
@@ -288,7 +288,12 @@ barplot(table(mtcars$cyl), main='Cyl',
 barplot(table(mtcars$gear),main='g',
         xlab='gear',ylab='freq',
         col='green')
-par(mfow=c(1,1))             #가상화면 분할 해제
+par(mfrow=c(1,1))             #가상화면 분할 해제
+
+
+
+#막대그래프의 x축은 해당하는 범주?
+#히스토그램의 x축은 구간 
 
 
 
